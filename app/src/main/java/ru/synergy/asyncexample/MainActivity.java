@@ -1,10 +1,10 @@
 package ru.synergy.asyncexample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,18 +14,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void buttonClick(View view){
-        switch (view.getId()){
+    public void buttonClick(View view) {
+
+        Intent intent = null;
+        switch (view.getId()) {
             case R.id.asynctack:
-                Intent intent = new Intent(this,AsyncTaskExample.class);
+                intent = new Intent(this, AsyncTaskExample.class);
                 startActivity(intent);
+                break;
+            case R.id.thread:
+                intent = new Intent(this, ThreadExample.class);
+                startActivity(intent);
+                break;
+            default: return;
 
         }
 
 
     }
-
-
 
 
 }
