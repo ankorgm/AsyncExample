@@ -10,7 +10,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 public class ThreadExample extends AppCompatActivity {
+
+    ExecutorService service = Executors.newFixedThreadPool(3);
+
 
     int mCounter;
     Handler handler = new Handler() {
@@ -80,10 +88,14 @@ public class ThreadExample extends AppCompatActivity {
         };
 
 
-        Thread thread = new Thread(runnable);
-        thread.start();
+//        Thread thread = new Thread(runnable);
+//        thread.start();
+          service.execute(runnable);
 
 
+
+          Future future = service.submit(runnable);
+//          future.get();
     }
 
 }
