@@ -2,6 +2,7 @@ package ru.synergy.asyncexample;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,16 @@ public class AsyncTaskExample extends AppCompatActivity {
         MyAsyncTask asyncTask = new MyAsyncTask();
         asyncTask.execute("Hello world");
     }
+
+
+    public void onClick(View v){
+        //TODO
+
+    }
+
+
+
+
 
 }
 
